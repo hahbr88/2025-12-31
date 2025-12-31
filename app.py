@@ -4,12 +4,18 @@ from bs4 import BeautifulSoup
 import re
 from datetime import datetime
 from zoneinfo import ZoneInfo
+from dotenv import load_dotenv
 import os
+
+load_dotenv()
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 GOSSIP_MAIN_URL = "https://www.bbc.com/sport/football/gossip"
 ARTICLE_SELECTOR = "div[data-component='text-block'] p[class*='Paragraph']"
 SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL")
+
+if not SLACK_WEBHOOK_URL:
+    raise RuntimeError("SLACK_WEBHOOK_URL 환경변수가 설정되지 않았습니다.")
 
 
 def fetch_html(url: str) -> BeautifulSoup:
