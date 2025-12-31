@@ -24,3 +24,9 @@ python -m pip install -r requirements.txt
 #아래 입력하여 실행
 python .\app.py
 ```
+
+---
+
+### bbc-football-gossip-translator (v1.0)
+
+오늘 BBC 축구 가십 기사를 크롤링한 후 한국어로 번역하고 설정해둔 슬랙 채널로 메세지를 보내는 앱 
