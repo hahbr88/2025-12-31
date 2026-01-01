@@ -11,11 +11,20 @@ pip freeze > requirements.txt
 
 - 새 환경 세팅
 ``` powershell    
-# python -m venv [venv 폴더명] 이 프로젝트에서는 폴더명 .venv로 설정
+# 가상환경 설정
+
+# WINDOWS
 python -m venv .venv
+# MAC
+python3 -m venv .venv
 
 #이후 .venv 폴더 생성 후 아래 디렉토리 입력해서 실행
+
+# WINDOWS
 .\.venv\Scripts\Activate.ps1
+# MAC
+source .venv/bin/activate
+
 
 python -m venv .venv
 .\.venv\Scripts\activate
